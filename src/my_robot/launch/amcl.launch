@@ -6,7 +6,12 @@
 
   <!-- AMCL Node -->
   <node name="amcl" pkg="amcl" type="amcl" output="screen">
-    <remap from="scan" to="my_robot/laser/scan"/>
+    <!-- <remap from="scan" to="my_robot/laser/scan"/> -->
+     <param name="min_particles" value="25"/>
+    <param name="max_particles" value="5000"/>
+    <param name="update_min_a" value="0.05"/>
+    <param name="update_min_d" value="0.0314"/>
+
     <param name="odom_frame_id" value="odom"/>
     <param name="odom_model_type" value="diff-corrected"/>
     <param name="base_frame_id" value="robot_footprint"/>
@@ -15,6 +20,7 @@
     <!-- Initial pose -->
     <param name="initial_pose_x" value="0"/>
     <param name="initial_pose_y" value="0"/>
+    <param name="initial_pose_a" value="-1.570"/>
   </node>
 
   <!-- Move Base -->
@@ -22,6 +28,7 @@
     <remap from="/scan" to="/my_robot/laser/scan"/>
     <param name="base_global_planner" value="navfn/NavfnROS" />
     <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
+
     <rosparam file="$(find my_robot)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
   <rosparam file="$(find my_robot)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
   <rosparam file="$(find my_robot)/config/local_costmap_params.yaml" command="load" />
