@@ -1,2 +1,2 @@
 set(ball_chaser_MESSAGE_FILES "")
-set(ball_chaser_SERVICE_FILES "/home/workspace/new_ws/src/ball_chaser/srv/DriveToTarget.srv")
+set(ball_chaser_SERVICE_FILES "/home/workspace/Where-Am-I/src/ball_chaser/srv/DriveToTarget.srv")
