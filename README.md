@@ -1,5 +1,5 @@
 # Where-Am-I
-Robot localization using ROS AMCL package
+Robot localization using ROS AMCL package.
 This project is a part of the Udacity Robotics Software engineer nanodegree
 
 ![image](https://user-images.githubusercontent.com/92162018/204098335-e044a5de-0cff-498b-9992-8fd1c96a2d06.png)
